@@ -203,39 +203,44 @@
         </span>
     </xsl:template>
 
-    <!-- <xsl:template match="t:note"> -->
-        <!-- <span class="note"><a href="#">[*]</a><span class="note-content"><xsl:text>(</xsl:text><xsl:value-of select="." /><xsl:text>)</xsl:text></span></span> -->
+    <xsl:template match="t:note">
+        <span class="note"><a href="#">[*]</a><span class="note-content"><xsl:text>(</xsl:text><xsl:value-of select="." /><xsl:text>)</xsl:text></span></span>
 
-    <!-- </xsl:template> -->
+    </xsl:template>
 
 
     <!-- <xsl:number level="any" count="footnote" format="[1]"/> -->
 
-    <xsl:template match="t:note">
+    <!-- <xsl:template match="t:note">
      <a>
       <xsl:attribute name="name">
-       <xsl:text>footnoteref</xsl:text><xsl:number level="any" count="note" format="1"/>
+       <xsl:text>note</xsl:text><xsl:number level="any" count="note" format="1"/>
       </xsl:attribute>
       <xsl:attribute name="href">
-       <xsl:text>#footnote</xsl:text><xsl:number level="any" count="note" format="1"/>
+       <xsl:text>#note</xsl:text><xsl:number level="any" count="note" format="1"/>
       </xsl:attribute>
       <sup><xsl:number level="any" count="note" format="[1]"/></sup>
      </a>
-    </xsl:template>
+    </xsl:template> -->
 
-    <xsl:template name="notessection">
- <!-- Test if tei:text contains any tei:note elements at any level -->
- <xsl:if test="text//note">
-  <!-- If yes: add html:hr element and build html:div for the context note -->
-  <hr class="subdivider"/>
-  <div class="notes">
-   <h2><a id="notes"/>Notes:</h2>
-    <xsl:for-each select=".//note">
-     <xsl:apply-templates select="." mode="shownotes"/>
-    </xsl:for-each></div>
-  </xsl:if>
-  <!-- If no: do nothing -->
-</xsl:template>
+    <!-- <xsl:template match="t:note">
+  <xsl:variable name="fnum"
+      select="count(preceding::note[ancestor::chapter//.])+1"/>
+  <a>
+    <xsl:attribute name="href">
+      <xsl:text>#FOOTNOTE-</xsl:text>
+      <xsl:number value="$fnum" format="1"/>
+    </xsl:attribute>
+    <xsl:text>[</xsl:text>
+    <xsl:number value="$fnum"/>
+    <xsl:text>]</xsl:text>
+  </a>
+</xsl:template> -->
+
+
+
+
+
 
 
     <!-- <xsl:template match="t:note" mode="note">
