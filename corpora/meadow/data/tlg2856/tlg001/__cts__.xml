@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The work node has three attributes :
+    - The first one, groupUrn, contains only the urn up to the textgroup component
+    - The second, urn, contains only the urn up to the work component
+    - The third, xml:lang, reflects the language of the work, *ie* the language of the edition.
+-->
+<ti:work xmlns:ti="http://chs.harvard.edu/xmlns/cts" groupUrn="urn:cts:greekLit:tlg2856" urn="urn:cts:greekLit:tlg2856.tlg001"
+  xml:lang="grc">
+    <!--
+      Work must have at least one title node.
+      Title node needs xml:lang declaration, it reflects the language of the title.
+    -->
+    <ti:title xml:lang="eng">Spiritual Meadow</ti:title>
+    <ti:title xml:lang="grc">Λειμῶν</ti:title>
+    <ti:title xml:lang="lat">Pratum Spirituale</ti:title>
+    <!--
+      For each "text", either edition, translation, or commentary, there should be a ti:edition, ti:translation, or ti:commentary node
+
+      The edition nodes has two attributes :
+        - The first one, workUrn, contains only the urn up to the work component
+        - The second, urn, contains the full urn
+    -->
+    <ti:edition
+      workUrn="urn:cts:greekLit:tlg2856.tlg001"
+      urn="urn:cts:greekLit:tlg2856.tlg001.1st1K-grc1"
+    >
+        <!--
+          Edition, Translation, and Commentary must have at least one label node.
+          Label represents the title of the edition.
+          Label node needs xml:lang declaration, it reflects the language of the title.
+        -->
+        <ti:label xml:lang="eng">Cursus Completus Patrologiae Graecae 87.3, ed. J.-P. Migne (1863)</ti:label>
+        <!--
+          Edition, Translation, and Commentary must have at least one description node.
+          Description node needs xml:lang declaration, it reflects the language of the description.
+
+        -->
+        <!-- <ti:description xml:lang="grc">
+            ΤΟΥ ΜΑΚΑΡΙΟΥ ΙΩΑΝΝΟΥ ΤΟΥ ΕΥΚΡΑΤΑ ΒΙΒΛΟΣ, Η ΛΕΓΟΜΕΝΗ ΛΕΙΜΩΝ ΔΙΑ ΤΟ ΠΟΛΥΑΝΘΗ ΒΙΩΝ ΔΙΗΓΗΣΙΝ ΤΗΣ ΟΥΡΑΝΟΠΟΡΟΥ ΡΟΔΟΝΙΑΣ ΦΕΡΕΙΝ
+        </ti:description>
+        <ti:description xml:lang="lat">
+            Beati Joannis Eucratae Liber qui inscribitur Pratum / quod floridam proferat vitarum narrationem coelestis roseti
+        </ti:description> -->
+        <ti:description xml:lang="eng">
+            which collates the editions of du Duc (1624) and Cotelier (1681), including notes.
+            <!-- Chapter titles and numbering belong, respectively, to Traversari (1423) and Lippomanno (1556). -->
+        </ti:description>
+    </ti:edition>
+
+</ti:work>
