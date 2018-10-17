@@ -25,18 +25,16 @@ def meadow_chunker(text, getreffs):
 
 general_collection = CtsTextInventoryCollection()
 
-meadow = CtsTextInventoryMetadata("meadow_collection", parent=general_collection)
-meadow.set_label("Spiritual Meadow", "eng")
+greek_texts = CtsTextInventoryMetadata("greek_texts", parent=general_collection)
+greek_texts.set_label("Greek Texts", "eng")
 
 
-misc = CtsTextInventoryMetadata("mnemosyne:misc", parent=general_collection)
-misc.set_label("Miscellaneous", "eng")
 
 organizer = CollectionDispatcher(general_collection, default_inventory_name="id:misc")
 
-@organizer.inventory("meadow_collection")
+@organizer.inventory("greek_texts")
 def organize_my_meadow(collection, path=None, **kwargs):
-    if collection.id.startswith("urn:cts:greekLit:tlg2856"):
+    if collection.id.startswith("urn:cts:greekLit"):
         return True
     return False
 
