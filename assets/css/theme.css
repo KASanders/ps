@@ -221,8 +221,8 @@ ul.reffs > li {
 }
 .note:hover > .note-content {
   display:inline;
-  font-style: italic;
-  color:grey;
+  /* font-style: italic; */
+  color:red;
 }
 
 ol > li {

@@ -204,7 +204,7 @@
     </xsl:template>
 
     <xsl:template match="t:note">
-        <span class="note"><a href="#">[*]</a><span class="note-content"><xsl:text>(</xsl:text><xsl:value-of select="." /><xsl:text>)</xsl:text></span></span>
+        <span class="note"><a href="#">[*]</a><span class="note-content"><xsl:text></xsl:text><xsl:value-of select="." /><xsl:text></xsl:text></span></span>
 
     </xsl:template>
 
