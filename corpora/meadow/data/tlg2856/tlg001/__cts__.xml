@@ -30,7 +30,7 @@
           Label represents the title of the edition.
           Label node needs xml:lang declaration, it reflects the language of the title.
         -->
-        <ti:label xml:lang="eng">Patrologiae Cursus Completus Series Graeca 87.3, ed. J.P. Migne (1863)</ti:label>
+        <ti:label xml:lang="eng">Patrologiae Cursus Completus Series Graeca 87.3, ed. J.P. Migne (1863).</ti:label>
         <!--
           Edition, Translation, and Commentary must have at least one description node.
           Description node needs xml:lang declaration, it reflects the language of the description.
@@ -43,7 +43,7 @@
             Beati Joannis Eucratae Liber qui inscribitur Pratum / quod floridam proferat vitarum narrationem coelestis roseti
         </ti:description> -->
         <ti:description xml:lang="eng">
-            which collates the editions of du Duc (1624) and Cotelier (1681), including notes.
+            Migne's text collates the partial editions (and notes) of du Duc (1624) and Cotelier (1681).
             <!-- Chapter titles and numbering belong, respectively, to Traversari (1423) and Lippomanno (1556). -->
         </ti:description>
     </ti:edition>

@@ -36,9 +36,13 @@
 
     <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function(event) {
-      new Alpheios.Embedded().activate();
+      new Alpheios.Embedded({clientId:"pratum-spirituale"}).activate();
     });
     </script>
+
+
+
+
       <div class="container-fluid">
       <div class="row">
         <nav class="col-sm-2 menus">
@@ -74,6 +78,7 @@
     {% endfor %}
 
   {% block additionalscript %}
+
   {% endblock %}
   {% block footer %}
           {% include "main::footer.html" %}

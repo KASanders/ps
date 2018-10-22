@@ -204,68 +204,35 @@
     </xsl:template>
 
     <xsl:template match="t:note">
-        <span class="note"><a href="#">[*]</a><span class="note-content"><xsl:text></xsl:text><xsl:value-of select="." /><xsl:text></xsl:text></span></span>
+        <span aria-describedby="footnote-label" id="footnoteref">
+            <span class="note-content">
+            <xsl:text></xsl:text>
+            <xsl:value-of select="."/>
+            <xsl:text></xsl:text>
+          </span>
+        </span>
 
     </xsl:template>
 
 
-    <!-- <xsl:number level="any" count="footnote" format="[1]"/> -->
-
     <!-- <xsl:template match="t:note">
-     <a>
-      <xsl:attribute name="name">
-       <xsl:text>note</xsl:text><xsl:number level="any" count="note" format="1"/>
-      </xsl:attribute>
-      <xsl:attribute name="href">
-       <xsl:text>#note</xsl:text><xsl:number level="any" count="note" format="1"/>
-      </xsl:attribute>
-      <sup><xsl:number level="any" count="note" format="[1]"/></sup>
-     </a>
+        <span class="note"><a href="#">[*]</a><span class="note-content"><xsl:text></xsl:text><xsl:value-of select="." /><xsl:text></xsl:text></span></span>
+
     </xsl:template> -->
 
-    <!-- <xsl:template match="t:note">
-  <xsl:variable name="fnum"
-      select="count(preceding::note[ancestor::chapter//.])+1"/>
-  <a>
-    <xsl:attribute name="href">
-      <xsl:text>#FOOTNOTE-</xsl:text>
-      <xsl:number value="$fnum" format="1"/>
-    </xsl:attribute>
-    <xsl:text>[</xsl:text>
-    <xsl:number value="$fnum"/>
-    <xsl:text>]</xsl:text>
-  </a>
-</xsl:template> -->
 
 
 
-
-
-
-
-    <!-- <xsl:template match="t:note" mode="note">
-     <li>
-      <a>
-       <xsl:attribute name="name">
-        <xsl:text>footnote</xsl:text><xsl:number level="any" count="note" format="1"/>
-       </xsl:attribute>
-       <xsl:attribute name="href">
-        <xsl:text>#footnoteref</xsl:text><xsl:number level="any" count="note" format="1"/>
-       </xsl:attribute>
-       <xsl:number level="any" count="note" format="[1]"/>
-      </a>
-      <xsl:text> </xsl:text>
-      <xsl:apply-templates/>
-     </li>
-    </xsl:template> -->
-
-    <!-- <xsl:template match="t:note">
-    <sup>
-        <a href="note{count(preceding::note) + 1}">
-            <xsl:value-of select="count(preceding::note) + 1"/>
+    <!-- <xsl:template match="t:ref">
+        <a class="urn">
+            <xsl:attribute name="href">
+                <xsl:value-of select="@target"/>
+            </xsl:attribute>
+            <xsl:value-of select="." />
+            [*]
         </a>
-    </sup>
-  </xsl:template> -->
+    </xsl:template> -->
+
 
     <xsl:template match="t:ref">
         <a class="urn">

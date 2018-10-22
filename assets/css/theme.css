@@ -6,6 +6,7 @@ body, html {
 body {
     text-rendering: optimizelegibility;
     background-color: white;
+    counter-reset: footnotes;
 }
 #reading-container, #menu-container {
     min-height: 100%;
@@ -106,6 +107,11 @@ ul.menu li a.active {
 #reading-container article.reffs {
     max-width: 90%;
 }
+
+#reading-container h3 {
+    font-size: 1.4em;
+}
+
 #reading-container h2 {
     font-size: 1.4em;
 }
@@ -113,6 +119,22 @@ ul.menu li a.active {
     font-size: 1.4em;
     margin: 1em 0 1em;
 }
+
+#byline {
+    font-size: 1em;
+    margin: 1em 0 1em;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+#site-title {
+  font-size: 1.4em;
+  margin: 1em 0 1em;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
 #reading-container article header, #reading-container article section, #reading-container article body {
     font-size: 1 em;
     line-height: 1.618em;
@@ -216,12 +238,48 @@ ul.reffs > li {
   text-align:right;
 }
 
-.note > .note-content {
+/* .note::after {
+  counter-increment: note;
+  content: counter(note);
+
+} */
+
+.note-content {
   display:none;
 }
 .note:hover > .note-content {
   display:inline;
   /* font-style: italic; */
+  color:red;
+}
+
+[aria-describedby="footnote-label"]{
+  counter-increment: footnotes;
+  text-decoration: none;
+  color:inherit;
+  cursor: default;
+  outline: none;
+
+}
+
+[aria-describedby="footnote-label"]::before{
+  content: '[' counter(footnotes)']';
+  vertical-align: super;
+  font-size: 0.8em;
+  margin-left: 2px;
+  margin-right: 2px;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* [aria-describedby="footnote-label"]:focus::after{
+  outline: thin dotted;
+  outline-offset: 2px;
+} */
+
+[aria-describedby="footnote-label"]:hover > .note-content{
+  display:inline;
   color:red;
 }
 
@@ -252,4 +310,9 @@ ol > li:hover {
 }
 span[token-selector="state.tokens"] {
   display:none;
+}
+
+#byline h4 {
+  text-align: center;
+  font-size: 0.5em;
 }
