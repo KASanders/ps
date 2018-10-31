@@ -12,7 +12,7 @@ from flask_nemo import Nemo
 def meadow_chunker(text, getreffs):
     # We build a list of the number
     chapters = []
-    for chapter_number in range(0, 41):  # Range in Python stops before its end limit
+    for chapter_number in range(0, 81):  # Range in Python stops before its end limit
         chapters.append(
             (  # Tuple are written with an () in python
                 str(chapter_number),                   # First the reference for the URI as string
